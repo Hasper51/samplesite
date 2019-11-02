@@ -1,0 +1,13 @@
+.add_b{
+  color: white;
+  
+  
+}
+.add_b:hover{
+  text-decoration: none;
+  color: white;
+}
+.nav_img{
+  width: auto;
+  height: 50px;
+}

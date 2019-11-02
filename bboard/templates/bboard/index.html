@@ -1,0 +1,17 @@
+{% extends "bboard/layout/basic.html" %}
+{% block content %}
+{% if 'bboard:add_bb' in perms %}
+<button type="button" class="btn btn-primary"><a class='add_b' href="{% url 'bboard:add' %}">Добавить</a></button>
+{% endif %}
+
+
+{% for bb in bbs %}
+<div>
+  <h2>{{ bb.title }}</h2>
+  <p>{{ bb.content }}</p>
+  <p><a href="{% url 'by_rubric' bb.rubric.pk %}">{{ bb.rubric.name }} </a></p>
+
+  <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+</div>
+{% endfor %}
+{% endblock %}
