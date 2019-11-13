@@ -1,12 +1,11 @@
 from django.urls import path
+from . import views
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordChangeDoneView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from .views import BbCreateView
 from .views import index, by_rubric
 urlpatterns = [
   path('add/', BbCreateView.as_view(), name='add'),
-  path('accounts/login/', 
-      LoginView.as_view(), 
-      name='login'),
+  path('accounts/login/', views.user_login, name='login'),
   path('accounts/logout/', 
       LogoutView.as_view(
       next_page='bboard:index'), 
